@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<head>
+  <title>NameGenius</title>
+  <link
+    rel="shortcut icon"
+    href="{{ url_for('static', filename='dog.png') }}"
+  />
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+</head>
+
+<br>
+</>
+<!-- Page navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" data-spy="affix" data-offset-top="0">
+  <div class="container">
+      <a class="navbar-brand" href="#"><img src="assets/imgs/logo.svg" alt=""></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto align-items-center">
+              <li class="nav-item">
+                  <a class="nav-link" href="#home">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#about">About</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#service">Service</a>
+              </li>                   
+              <li class="nav-item d-none">
+                  <a class="nav-link" href="#portfolio">Portfolio</a>
+              </li>
+              <li class="nav-item d-none">
+                  <a class="nav-link" href="#testmonial">Testmonial</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#blog">Blog</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#contact">Contact</a>
+              </li>
+              <li class="nav-item">
+                  <a class="- btn btn-primary rounded ml-3" href="components.html">ABOUT ME</a>
+              </li>
+          </ul>
+      </div>
+  </div>          
+</nav>
+
+<body>
+  <img src="{{ url_for('static', filename='dog.png') }}" class="icon" />
+  <h2>Name my pet</h2>
+  <form action="/" method="post">
+    <input type="text" name="location" class="input" placeholder="Enter an animal" required />
+  </form>
+  <button>
+    <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"></path><path d="M5 13c0-5.088 2.903-9.436 7-11.182C16.097 3.564 19 7.912 19 13c0 .823-.076 1.626-.22 2.403l1.94 1.832a.5.5 0 0 1 .095.603l-2.495 4.575a.5.5 0 0 1-.793.114l-2.234-2.234a1 1 0 0 0-.707-.293H9.414a1 1 0 0 0-.707.293l-2.234 2.234a.5.5 0 0 1-.793-.114l-2.495-4.575a.5.5 0 0 1 .095-.603l1.94-1.832C5.077 14.626 5 13.823 5 13zm1.476 6.696l.817-.817A3 3 0 0 1 9.414 18h5.172a3 3 0 0 1 2.121.879l.817.817.982-1.8-1.1-1.04a2 2 0 0 1-.593-1.82c.124-.664.187-1.345.187-2.036 0-3.87-1.995-7.3-5-8.96C8.995 5.7 7 9.13 7 13c0 .691.063 1.372.187 2.037a2 2 0 0 1-.593 1.82l-1.1 1.039.982 1.8zM12 13a2 2 0 1 1 0-4 2 2 0 0 1 0 4z" fill="currentColor"></path></svg>
+    <span>Generar Nombres </span>
+  </button>
+  {% if result %}
+  <div class="result">{{ result }}</div>
+  {% endif %}
+  
+</body>
+
+
+<div class="card">
+  <div class="chat-header">Chat</div>
+    <div class="chat-window">
+      <ul class="message-list"></ul>
+    </div>
+    <div class="chat-input">
+        <input type="text" class="message-input" placeholder="Type your message here">
+        <button class="send-button">Send</button>
+    </div>
+  </div>
+
